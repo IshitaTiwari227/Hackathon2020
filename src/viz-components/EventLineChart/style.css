@@ -1,0 +1,38 @@
+.line-chart .line {
+  fill: none;
+  stroke-width: 2;
+  stroke: #deb00d;
+}
+
+.line-chart .event-line {
+  fill: #deb00d;
+  fill-opacity: 0.1;
+}
+
+.line-chart .event-text-name {
+  font-size: 12px;
+  font-weight: bold;
+  fill: #aeb7c4;
+}
+.line-chart .event-text-date {
+  font-size: 12px;
+  font-weight: normal;
+  fill: #aeb7c4;
+}
+
+.line-chart .line-band {
+  fill: transparent;
+}
+
+.line-chart .hover-dot {
+  fill: #deb00d;
+}
+
+.line-chart-container {
+  position: relative;
+}
+
+.line-chart .x-axis-label {
+  font-size: 12px;
+  fill: #aeb7c4;
+}
