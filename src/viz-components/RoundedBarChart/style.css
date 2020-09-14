@@ -1,0 +1,43 @@
+.rounded-bar-chart-container {
+  position: relative;
+}
+
+.rounded-bar-chart .x-axis-label {
+  font-size: 12px;
+  font-weight: normal;
+  fill: #aeb7c4;
+}
+
+.rounded-bar-chart .bar {
+  fill: #deb00d;
+}
+
+.rounded-bar-chart .symbol {
+  fill: #e2d9b9;
+}
+
+.rounded-bar-chart-container .tooltip__title {
+  font-weight: bold;
+}
+
+.rounded-bar-chart-container .tooltip__table {
+  width: 100%;
+}
+
+.rounded-bar-chart-container .tooltip__table__value {
+  text-align: right;
+}
+
+.rounded-bar-chart-container .tooltip__table__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.rounded-bar-chart-container .tooltip__table__dot.total {
+  background-color: #deb00d;
+}
+
+.rounded-bar-chart-container .tooltip__table__dot.repeat {
+  background-color: #e2d9b9;
+}

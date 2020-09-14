@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { CardList } from "./components/card-list/card-list.component";
 import "./App.css";
 import { SearchBox} from "./components/SearchBox/search-box.component"
+import DonutChartComponent from "./components/DonutChart/donutChartComponent"
+import { BrowserRouter as Router } from "react-router-dom";
+import MainContentContainer from "./sections/main-content";
 class App extends Component {
   constructor() {
     super();
@@ -255,13 +258,15 @@ class App extends Component {
       )
     return (
       <div className="App">
-        <h1>Monsters Rolodexes</h1>
-        <SearchBox 
+        {/* <h1>Mental Health</h1> */}
+        <MainContentContainer/>
+        {/* <DonutChartComponent/> */}
+        {/* <SearchBox 
         placeholder="search monsters"
         handleChange={(e) => this.setState({ searchField: e.target.value })}
         />
         
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={filteredMonsters} /> */}
       </div>
     );
   }
