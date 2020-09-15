@@ -152,7 +152,7 @@ function AxisVertical({
             <text
               key={i}
               className={classes.ticks}
-              transform={`translate(${scale(tick) + 15}, -10)`}
+              transform={`translate(${scale(tick)+30}, -10)`}
             >
               {formatTick(tick)}
             </text>

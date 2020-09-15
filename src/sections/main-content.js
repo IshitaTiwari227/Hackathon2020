@@ -6,8 +6,10 @@ import VisitBehaviorPage from "./visit-behavior";
 const componentStyles = {
   bg: {
     overflow: "hidden",
-    background:
-      "linear-gradient(180deg, rgba(106, 113, 134, 0.88) 0%, #6A7186 100%)",
+    // background:
+    //   "linear-gradient(180deg, rgba(106, 113, 134, 0.88) 0%, #EC4D37 100%)",
+      background:
+       "#C4C4C4",
     width: "100%",
     height: "100%",
     display: "flex",
