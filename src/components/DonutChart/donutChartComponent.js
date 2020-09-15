@@ -2,7 +2,7 @@ import React from "react";
 import DonutChart from ".";
 
 
-var colors = ["#FFA600", "#00568E", "#E0E0E0"];
+var colors = [ "#E0E0E0","#FFA600", "#00568E"];
 const data = [
   {
     type: "Positive Tweets",
