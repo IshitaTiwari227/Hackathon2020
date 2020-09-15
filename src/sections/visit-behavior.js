@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import withStyles from "react-jss";
-import { Tile, ChartContainer,DonutChartComponent } from "../components";
+import { Tile, ChartContainer,DonutChartComponent,LineChartDeluxeComponent } from "../components";
 import { max } from "d3-array";
 import useWidth from "../utils/useWidth";
 import {
@@ -15,6 +15,14 @@ const componentStyles = {
     // marginTop: "50px",
     margin: "50px 20px",
     width: "calc(50% - 40px)"
+  },
+
+  textContainer: {
+    // marginTop: "50px",
+    margin: "50px -5px",
+    width: "100%",
+    textAlign:"left",
+    fontSize:"16px"
   }
 };
 
@@ -215,11 +223,321 @@ const VisitBehaviorPage = ({ classes }) => {
       <Tile title="HIGHLIGHTS" 
       // showMarketplaceToggle={false} showDivider={false} onMarketplaceChange={Toggle => setToggle(Toggle)}
       >
-        Wednesday afternoon is the most popular time of day for your audience to
-        visit the Condé Nast network. The most visits occured during the week of
-        January 5th and most traffic came from desktop users.
+        <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
       </Tile>
-      <Tile title="VISIT ACTIVITY" 
+      <Tile title="HEADING" 
+      // onMarketplaceChange={Toggle => setToggle(Toggle)}
+      >
+        <ChartContainer title="Sub Heading"  className={chartContainer}>
+          <RoundedBarChart
+            width={chartWidth}
+            height={300}
+            data={RoundedBarData}
+            dimName="startEndDate"
+            barMeasName="Total Visits"
+            symbolMeasName="Repeat Visits"
+          />
+        </ChartContainer>
+        <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        >
+           <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
+        </ChartContainer>
+        {/* <ChartContainer title="Average Engagement" className={chartContainer}>
+          <EventLineChart
+            width={chartWidth}
+            height={300}
+            data={avgEngagementData}
+            dimName="Date"
+            measName="Engagement"
+            tooltipRender={d => (
+              <>
+                <div>{d["Date"]}</div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>{d["Engagement"]}</span>{" "}
+                  pages per visit
+                </div>
+              </>
+            )}
+          />
+        </ChartContainer> */}
+        {/* <ChartContainer
+          title="Visits by Device Platform"
+          className={chartContainer}
+        >
+          <BubbleChart
+            width={chartWidth}
+            height={300}
+            data={bubbleData}
+            dimName="name"
+            measName="value"
+          />
+        </ChartContainer> */}
+      </Tile>
+      <Tile title="HEADING" 
+      // onMarketplaceChange={Toggle => setToggle(Toggle)}
+      >
+        {/* <ChartContainer title="Visits per Week" className={chartContainer}>
+          <RoundedBarChart
+            width={chartWidth}
+            height={300}
+            data={RoundedBarData}
+            dimName="startEndDate"
+            barMeasName="Total Visits"
+            symbolMeasName="Repeat Visits"
+          />
+        </ChartContainer> */}
+        <ChartContainer
+          title="Sub Heading"
+          className={chartContainer}
+        >
+          <DonutChartComponent/>
+        </ChartContainer>
+        <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        >
+           <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
+        </ChartContainer>
+        {/* <ChartContainer title="Average Engagement" className={chartContainer}>
+          <EventLineChart
+            width={chartWidth}
+            height={300}
+            data={avgEngagementData}
+            dimName="Date"
+            measName="Engagement"
+            tooltipRender={d => (
+              <>
+                <div>{d["Date"]}</div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>{d["Engagement"]}</span>{" "}
+                  pages per visit
+                </div>
+              </>
+            )}
+          />
+          null
+        </ChartContainer> */}
+        {/* <ChartContainer
+          title="Visits by Device Platform"
+          className={chartContainer}
+        >
+          <BubbleChart
+            width={chartWidth}
+            height={300}
+            data={bubbleData}
+            dimName="name"
+            measName="value"
+          />
+        </ChartContainer> */}
+      </Tile>
+      <Tile title="HEADING" 
+      // onMarketplaceChange={Toggle => setToggle(Toggle)}
+      >
+        {/* <ChartContainer title="Visits per Week" className={chartContainer}>
+          <RoundedBarChart
+            width={chartWidth}
+            height={300}
+            data={RoundedBarData}
+            dimName="startEndDate"
+            barMeasName="Total Visits"
+            symbolMeasName="Repeat Visits"
+          />
+        </ChartContainer> */}
+        {/* <ChartContainer
+          title="Visits by Time of Day"
+          className={chartContainer}
+        >
+          <DonutChartComponent/>
+        </ChartContainer> */}
+        <ChartContainer title="Sub Heading" className={chartContainer}>
+          <EventLineChart
+            width={chartWidth}
+            height={300}
+            data={avgEngagementData}
+            dimName="Date"
+            measName="Engagement"
+            tooltipRender={d => (
+              <>
+                <div>{d["Date"]}</div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>{d["Engagement"]}</span>{" "}
+                  pages per visit
+                </div>
+              </>
+            )}
+          />
+        </ChartContainer>
+        <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        >
+           <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
+        </ChartContainer>
+        {/* <ChartContainer
+          title="Visits by Device Platform"
+          className={chartContainer}
+        >
+          <BubbleChart
+            width={chartWidth}
+            height={300}
+            data={bubbleData}
+            dimName="name"
+            measName="value"
+          />
+          null
+        </ChartContainer> */}
+      </Tile>
+      <Tile title="HEADING" 
+      // onMarketplaceChange={Toggle => setToggle(Toggle)}
+      >
+        {/* <ChartContainer title="Visits per Week" className={chartContainer}>
+          <RoundedBarChart
+            width={chartWidth}
+            height={300}
+            data={RoundedBarData}
+            dimName="startEndDate"
+            barMeasName="Total Visits"
+            symbolMeasName="Repeat Visits"
+          />
+        </ChartContainer> */}
+        {/* <ChartContainer
+          title="Visits by Time of Day"
+          className={chartContainer}
+        >
+          <DonutChartComponent/>
+        </ChartContainer> */}
+        {/* <ChartContainer title="Average Engagement" className={chartContainer}>
+          <EventLineChart
+            width={chartWidth}
+            height={300}
+            data={avgEngagementData}
+            dimName="Date"
+            measName="Engagement"
+            tooltipRender={d => (
+              <>
+                <div>{d["Date"]}</div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>{d["Engagement"]}</span>{" "}
+                  pages per visit
+                </div>
+              </>
+            )}
+          />
+        </ChartContainer> */}
+        <ChartContainer
+          title="Sub Heading"
+          className={chartContainer}
+        >
+          <BubbleChart
+            width={chartWidth}
+            height={300}
+            data={bubbleData}
+            dimName="name"
+            measName="value"
+          />
+        </ChartContainer>
+        <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        >
+           <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
+        </ChartContainer>
+      </Tile>
+      <Tile title="HEADING" 
+      // onMarketplaceChange={Toggle => setToggle(Toggle)}
+      >
+        {/* <ChartContainer title="Visits per Week" className={chartContainer}>
+          <RoundedBarChart
+            width={chartWidth}
+            height={300}
+            data={RoundedBarData}
+            dimName="startEndDate"
+            barMeasName="Total Visits"
+            symbolMeasName="Repeat Visits"
+          />
+        </ChartContainer> */}
+        {/* <ChartContainer
+          title="Visits by Time of Day"
+          className={chartContainer}
+        >
+          <DonutChartComponent/>
+        </ChartContainer> */}
+        {/* <ChartContainer title="Average Engagement" className={chartContainer}>
+          <EventLineChart
+            width={chartWidth}
+            height={300}
+            data={avgEngagementData}
+            dimName="Date"
+            measName="Engagement"
+            tooltipRender={d => (
+              <>
+                <div>{d["Date"]}</div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>{d["Engagement"]}</span>{" "}
+                  pages per visit
+                </div>
+              </>
+            )}
+          />
+        </ChartContainer> */}
+        <ChartContainer
+          title="Sub Heading"
+          className={chartContainer}
+        >
+          <LineChartDeluxeComponent/>
+        </ChartContainer>
+        <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        >
+           <div className={classes.textContainer}>
+        Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Over the course of your life, if you experience mental health problems, your thinking, mood, and behavior could be affected. Many factors contribute to mental health problems, including:
+
+Biological factors, such as genes or brain chemistry.
+Life experiences, such as trauma or abuse.
+Family history of mental health problems</div>
+        </ChartContainer>
+      </Tile>
+      {/* <Tile title="VISIT ACTIVITY" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}
       >
         <ChartContainer title="Visits per Week" className={chartContainer}>
@@ -268,7 +586,7 @@ const VisitBehaviorPage = ({ classes }) => {
             measName="value"
           />
         </ChartContainer>
-      </Tile>
+      </Tile> */}
     </div>
   );
 };

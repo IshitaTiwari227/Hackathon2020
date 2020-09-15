@@ -30,8 +30,8 @@ const style = {
     top: "78%",
     left: "28%",
     fontWeight: 750,
-    fontSize: "26px",
-    color: "black",
+    fontSize: "24px",
+    color: "#AEB7C4",
   },
   hideLabel: {
     display: "none",
