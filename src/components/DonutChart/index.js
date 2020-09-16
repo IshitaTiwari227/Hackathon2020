@@ -67,10 +67,11 @@ const DonutChart = ({
   data,
   colors,
   displayTotal,
+  overall=false
 }) => {
-  var pie = d3.pie().value(d => d.value)(data);
+  var pie = d3.pie().value(d => d.percentageValue)(data);
   var translate = `translate(130,130)`;
-  var total = 0;
+  var total = 87458123;
   return (
     <div className={classes.wholeContainer}>
       <div className={classes.contentContainer}>
@@ -80,7 +81,6 @@ const DonutChart = ({
           >
             <g transform={translate}>
               {pie.map((d, i) => {
-                total = total + d.value;
                 return (
                   <Arc
                     key={`arc-${i}`}
@@ -105,12 +105,12 @@ const DonutChart = ({
             <div
               className={data.length > 2 ? classes.labelfor3 : classes.label}
               style={
-                formatNumber(total).length < 6
+                formatNumber(displayTotal).length < 6
                   ? { paddingLeft: "7px" }
                   : { paddingLeft: "0px" }
               }
             >
-              {formatNumber(total)}
+              {formatNumber(displayTotal)}
             </div>
           )}
         </div>

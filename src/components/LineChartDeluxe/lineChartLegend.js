@@ -13,7 +13,7 @@ const styles = {
     flexDirection: "row",
   },
   pRight: {
-    paddingRight: "20px",
+    paddingRight: "90px",
   },
   heading: {
     fontFamily: "Rubik",
