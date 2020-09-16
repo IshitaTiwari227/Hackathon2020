@@ -258,15 +258,7 @@ class App extends Component {
       )
     return (
       <div className="App">
-        {/* <h1>Mental Health</h1> */}
         <MainContentContainer/>
-        {/* <DonutChartComponent/> */}
-        {/* <SearchBox 
-        placeholder="search monsters"
-        handleChange={(e) => this.setState({ searchField: e.target.value })}
-        />
-        
-        <CardList monsters={filteredMonsters} /> */}
       </div>
     );
   }

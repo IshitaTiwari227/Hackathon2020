@@ -8,7 +8,7 @@ const componentStyles = {
   tileContainer: {
     margin: "35px 35px",
     padding: "10px 25px 38px",
-    width: "calc(100% - 100px)",
+    width: "calc(100% - 120px)",
     borderRadius: "5px",
     display: "flex",
     backgroundColor: PRIMARY,
