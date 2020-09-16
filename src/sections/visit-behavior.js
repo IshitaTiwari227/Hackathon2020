@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import withStyles from "react-jss";
-import { Tile, ChartContainer,DonutChartComponent,LineChartDeluxeComponent } from "../components";
+import { Tile, ChartContainer,DonutChartComponent,LineChartDeluxeComponent,BarChartVerticalComponent } from "../components";
 import { max } from "d3-array";
 import useWidth from "../utils/useWidth";
 import {
@@ -15,6 +15,12 @@ const componentStyles = {
     // marginTop: "50px",
     margin: "50px 20px",
     width: "calc(50% - 40px)"
+  },
+
+  barchartContainer: {
+    // marginTop: "50px",
+    margin: "50px 20px",
+    width: "calc(100% - 40px)"
   },
 
   textContainer: {
@@ -232,7 +238,7 @@ Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
       </Tile>
-      <Tile title="HEADING" 
+      {/* <Tile title="HEADING" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}
       >
         <ChartContainer title="Sub Heading"  className={chartContainer}>
@@ -257,7 +263,7 @@ Over the course of your life, if you experience mental health problems, your thi
 Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
-        </ChartContainer>
+        </ChartContainer> */}
         {/* <ChartContainer title="Average Engagement" className={chartContainer}>
           <EventLineChart
             width={chartWidth}
@@ -288,7 +294,7 @@ Family history of mental health problems</div>
             measName="value"
           />
         </ChartContainer> */}
-      </Tile>
+      {/* </Tile> */}
       <Tile title="HEADING" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}
       >
@@ -309,9 +315,15 @@ Family history of mental health problems</div>
           <DonutChartComponent/>
         </ChartContainer>
         <ChartContainer
-          title="Desciption"
+          title="Sub Heading"
           className={chartContainer}
         >
+          <DonutChartComponent/>
+        </ChartContainer>
+        {/* <ChartContainer
+          title="Desciption"
+          className={chartContainer}
+        > */}
            <div className={classes.textContainer}>
         Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
 
@@ -320,7 +332,8 @@ Over the course of your life, if you experience mental health problems, your thi
 Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
-        </ChartContainer>
+  
+        {/* </ChartContainer> */}
         {/* <ChartContainer title="Average Engagement" className={chartContainer}>
           <EventLineChart
             width={chartWidth}
@@ -353,9 +366,9 @@ Family history of mental health problems</div>
           />
         </ChartContainer> */}
       </Tile>
-      <Tile title="HEADING" 
-      // onMarketplaceChange={Toggle => setToggle(Toggle)}
-      >
+      {/* <Tile title="HEADING" 
+      onMarketplaceChange={Toggle => setToggle(Toggle)}
+      > */}
         {/* <ChartContainer title="Visits per Week" className={chartContainer}>
           <RoundedBarChart
             width={chartWidth}
@@ -372,7 +385,7 @@ Family history of mental health problems</div>
         >
           <DonutChartComponent/>
         </ChartContainer> */}
-        <ChartContainer title="Sub Heading" className={chartContainer}>
+        {/* <ChartContainer title="Sub Heading" className={chartContainer}>
           <EventLineChart
             width={chartWidth}
             height={300}
@@ -402,7 +415,7 @@ Over the course of your life, if you experience mental health problems, your thi
 Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
-        </ChartContainer>
+        </ChartContainer> */}
         {/* <ChartContainer
           title="Visits by Device Platform"
           className={chartContainer}
@@ -416,7 +429,7 @@ Family history of mental health problems</div>
           />
           null
         </ChartContainer> */}
-      </Tile>
+      {/* </Tile> */}
       <Tile title="HEADING" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}
       >
@@ -456,20 +469,14 @@ Family history of mental health problems</div>
         </ChartContainer> */}
         <ChartContainer
           title="Sub Heading"
-          className={chartContainer}
+          className={classes.barchartContainer}
         >
-          <BubbleChart
-            width={chartWidth}
-            height={300}
-            data={bubbleData}
-            dimName="name"
-            measName="value"
-          />
+         
+          <BarChartVerticalComponent/>
+         
+         
         </ChartContainer>
-        <ChartContainer
-          title="Desciption"
-          className={chartContainer}
-        >
+       
            <div className={classes.textContainer}>
         Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
 
@@ -478,7 +485,7 @@ Over the course of your life, if you experience mental health problems, your thi
 Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
-        </ChartContainer>
+       
       </Tile>
       <Tile title="HEADING" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}
@@ -517,16 +524,13 @@ Family history of mental health problems</div>
             )}
           />
         </ChartContainer> */}
-        <ChartContainer
+          <ChartContainer
           title="Sub Heading"
-          className={chartContainer}
+          className={classes.barchartContainer}
         >
           <LineChartDeluxeComponent/>
         </ChartContainer>
-        <ChartContainer
-          title="Desciption"
-          className={chartContainer}
-        >
+       
            <div className={classes.textContainer}>
         Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
 
@@ -535,7 +539,7 @@ Over the course of your life, if you experience mental health problems, your thi
 Biological factors, such as genes or brain chemistry.
 Life experiences, such as trauma or abuse.
 Family history of mental health problems</div>
-        </ChartContainer>
+       
       </Tile>
       {/* <Tile title="VISIT ACTIVITY" 
       // onMarketplaceChange={Toggle => setToggle(Toggle)}

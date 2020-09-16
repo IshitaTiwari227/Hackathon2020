@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "react-jss";
 import { HEADER_TITLE } from "../css-values/dark-theme";
+import mentalHealth from "../resources/mental-health-image.jpg";
 
 //  Component to display page title for major sections
 
