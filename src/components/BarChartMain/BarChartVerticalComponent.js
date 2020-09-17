@@ -17,30 +17,30 @@ const styles = {
   }
 };
 
-const BarChartVerticalComponent = ({legendtotal=[123456,123456,123456]}) => {
+const BarChartVerticalComponent = ({legendtotal=[45972878,25372595,44938126]}) => {
 const labels = ["Positive", "Negative", "Neutral"];
 const colorlegends = ["#E0E0E0","#FFA600", "#00568E"];
   
 
-  const [legends, setLegends] = useState([123456,123456,123456])
+  const [legends, setLegends] = useState([45972878,25372595,44938126])
   const [hover, setHover] = useState(false);
  
   
   const data=[
     { quarter : "Mar",
-    revenue2020: 43.42,
-    revenue2019: 16.80,
-    revenue2018: 39.78
+    revenue2020: 43958,
+    revenue2019: 17005,
+    revenue2018: 40268
     },
     { quarter : "Apr",
-    revenue2020: 38.22,
-    revenue2019: 20.26,
-    revenue2018: 41.52
+    revenue2020: 1538001,
+    revenue2019: 815371,
+    revenue2018: 1670551
     },
     { quarter : "May",
-    revenue2020: 39.97,
-    revenue2019: 22.03,
-    revenue2018: 38.01
+    revenue2020: 594788,
+    revenue2019: 327822,
+    revenue2018: 565650
     },
   ]
 
@@ -65,12 +65,12 @@ const colorlegends = ["#E0E0E0","#FFA600", "#00568E"];
  
   return (
     <div style={{ position: "relative" }}>
-      {/* <BarLegend
+      <BarLegend
         hover={hover}
         labels={labels}
         colors={colorlegends}
         legends={legends}
-      /> */}
+      />
       <div style={{ display: "flex", position: "relative" }} >
         <BarChartVertical
           data={data}

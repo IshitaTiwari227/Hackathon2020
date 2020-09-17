@@ -72,6 +72,8 @@ const DonutChart = ({
   var pie = d3.pie().value(d => d.percentageValue)(data);
   var translate = `translate(130,130)`;
   var total = 87458123;
+
+  const f = d3.format(".3s");
   return (
     <div className={classes.wholeContainer}>
       <div className={classes.contentContainer}>
@@ -107,10 +109,10 @@ const DonutChart = ({
               style={
                 formatNumber(displayTotal).length < 6
                   ? { paddingLeft: "7px" }
-                  : { paddingLeft: "0px" }
+                  : { paddingLeft: "11px" }
               }
             >
-              {formatNumber(displayTotal)}
+              {f(displayTotal)}
             </div>
           )}
         </div>

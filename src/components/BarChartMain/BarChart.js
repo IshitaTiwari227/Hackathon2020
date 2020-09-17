@@ -34,9 +34,10 @@ const BarChartVertical = ({
   touchOut
 }) => {
   const [ref, dimensions] = useChartDimensions({
-    marginLeft: 20,
+    marginLeft: 150,
     marginTop: 20,
-    height: 250,
+    height: 450,
+    marginRight:50
   });
   
   const barSize2018 = data.map(el=> el.revenue2018);
@@ -105,45 +106,21 @@ const BarChartVertical = ({
                         x={xScale0(layer0.quarter)}
                         y={yScale0(layer0.revenue2018)}
                         fill={"#E0E0E0"}
-                      /> <text
-                      className={classes.percent}
-                      x={
-                        xScale0(layer0.quarter)+30
-                      }
-                      y={yScale0(layer0.revenue2018)-5}
-                    >
-                      {layer0.revenue2018.toFixed(1)+"%"}
-                    </text>
+                      /> 
                       <rect
                         width={30}
                         height={yScale0(0)-yScale0(layer0.revenue2019)}
                         x={xScale0(layer0.quarter)+34}
                         y={yScale0(layer0.revenue2019)}
                         fill={"#FFA600"}
-                      /><text
-                      className={classes.percent}
-                      x={
-                        xScale0(layer0.quarter)+64
-                      }
-                      y={yScale0(layer0.revenue2019)-5}
-                    >
-                      {(layer0.revenue2019).toFixed(1)+"%"}
-                    </text>
+                      />
                       <rect
                         width={30}
                         height={yScale0(0)-yScale0(layer0.revenue2020)}
                         x={xScale0(layer0.quarter)+68}
                         y={yScale0(layer0.revenue2020)}
                         fill={"#00568E"}
-                      /> <text
-                      className={classes.percent}
-                      x={
-                        xScale0(layer0.quarter)+97
-                      }
-                      y={yScale0(layer0.revenue2020)-5}
-                    >
-                      {(layer0.revenue2020).toFixed(1)+"%"}
-                    </text>
+                      /> 
                     </g>
                   );
                 })}
