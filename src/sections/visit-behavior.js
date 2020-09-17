@@ -6,6 +6,7 @@ import {
   DonutChartComponent,
   LineChartDeluxeComponent,
   BarChartVerticalComponent,
+  BarChartVerticalComponentMain
 } from "../components";
 import PageTitle from "../components/page-title";
 
@@ -54,96 +55,90 @@ const VisitBehaviorPage = ({ classes }) => {
   const data = [
     {
       type: "Positive Tweets",
-      value: 4800987,
-      oldValue: 2600678,
-      percentageValue: 39.2,
+      percentageValue: 40.55,
     },
     {
       type: "Negative Tweets",
-      value: 42005875,
-      oldValue: 860089798,
-      percentageValue: 22,
+      percentageValue: 20.67,
     },
     {
       type: "Neutral Tweets",
-      value: 37890588,
-      oldValue: 8600768,
-      percentageValue: 38.8,
+      percentageValue: 38.78,
+    },
+  ];
+
+  const dataUSA = [
+    {
+      type: "Positive Tweets",
+      percentageValue: 41.07,
+    },
+    {
+      type: "Negative Tweets",
+      percentageValue: 22.59,
+    },
+    {
+      type: "Neutral Tweets",
+      percentageValue: 36.34,
+    },
+  ];
+
+  const dataUK = [
+    {
+      type: "Positive Tweets",
+      percentageValue: 43.20,
+    },
+    {
+      type: "Negative Tweets",
+      percentageValue: 21.17,
+    },
+    {
+      type: "Neutral Tweets",
+      percentageValue: 35.63,
     },
   ];
 
   const dataIndia = [
     {
       type: "Positive Tweets",
-      percentageValue: 46,
+      percentageValue: 44.77,
     },
     {
       type: "Negative Tweets",
-      percentageValue: 12,
+      percentageValue: 16.62,
     },
     {
       type: "Neutral Tweets",
-      percentageValue: 42,
+      percentageValue: 38.61,
     },
   ];
 
-  const dataUS = [
+  const dataCanada = [
     {
       type: "Positive Tweets",
-      percentageValue: 40.2,
+      percentageValue: 44.42,
     },
     {
       type: "Negative Tweets",
-      percentageValue: 45.2,
+      percentageValue: 20.33,
     },
     {
       type: "Neutral Tweets",
-      percentageValue: 14.6,
+      percentageValue: 35.25,
     },
   ];
 
-  const dataBrazil = [
+  const dataNigeria = [
     {
       type: "Positive Tweets",
-      percentageValue: 12,
+      percentageValue: 42.89,
     },
     {
       type: "Negative Tweets",
-      percentageValue: 60,
+      percentageValue: 14.83,
     },
     {
       type: "Neutral Tweets",
-      percentageValue: 28,
-    },
-  ];
-
-  const dataChina = [
-    {
-      type: "Positive Tweets",
-      percentageValue: 57,
-    },
-    {
-      type: "Negative Tweets",
-      percentageValue: 17,
-    },
-    {
-      type: "Neutral Tweets",
-      percentageValue: 26,
-    },
-  ];
-
-  const dataJapan = [
-    {
-      type: "Positive Tweets",
-      percentageValue: 28,
-    },
-    {
-      type: "Negative Tweets",
-      percentageValue: 34,
-    },
-    {
-      type: "Neutral Tweets",
-      percentageValue: 38,
+      percentageValue: 42.27,
     },
   ];
 
@@ -165,7 +160,7 @@ const VisitBehaviorPage = ({ classes }) => {
       </Tile>
       <Tile title="SENTIMENT ANALYSIS">
         <ChartContainer title="" className={classes.barchartContainer}>
-          <LineChartDeluxeComponent />
+          <BarChartVerticalComponentMain />
         </ChartContainer>
 
         <div className={classes.textContainer}>
@@ -186,10 +181,13 @@ const VisitBehaviorPage = ({ classes }) => {
           <DonutChartComponent
             overall={true}
             data={data}
-            displayTotal="18762345132"
+            displayTotal="147000000"
           />
         </ChartContainer>
         <ChartContainer title="" className={chartContainer}>
+        <BarChartVerticalComponent/>
+        </ChartContainer>
+       
           <div className={classes.textContainer}>
             The proliferation of social media usage for articulation of opinions
             and feelings by the common public has created possibilities of
@@ -204,49 +202,49 @@ const VisitBehaviorPage = ({ classes }) => {
             sample of them are “#corona”, “#coronavirus”, “covid”, “#covid”,
             “#covid19”, “#covid-19", “#pandemic”, “#quarantine”, “#lockdown”,
             “#socialdistancing” etc. Applying the sentiment analysis to these
-            tweets, it was observed that most of the tweets i.e. 52% expressed
-            positive sentiments, while 34% were neutral and rest of the
-            tweets-amounting to 14% accounted for negative sentiments. Thus, the
+            tweets, it was observed that most of the tweets i.e. 40.55% expressed
+            positive sentiments, while 38.78% were neutral and rest of the
+            tweets-amounting to 20.67% accounted for negative sentiments. Thus, the
             findings reveal that the perception of Twitter users was mostly
             positive or neutral whenever they used any of these two hashtags
             while tweeting.</p>
           </div>
-        </ChartContainer>
+     
       </Tile>
       <Tile title="GEOGRAPHIC BREAKDOWN OF TWEETS">
-        <ChartContainer title="India" className={classes.donutchartContainer}>
+        <ChartContainer title="USA" className={classes.donutchartContainer}>
+          <DonutChartComponent
+            overall={true}
+            data={dataUSA}
+            displayTotal="4193608"
+          />
+        </ChartContainer>
+        <ChartContainer title="UK" className={classes.donutchartContainer}>
+          <DonutChartComponent
+            overall={true}
+            data={dataUK}
+            displayTotal="1002298"
+          />
+        </ChartContainer>
+        <ChartContainer title="INDIA" className={classes.donutchartContainer}>
           <DonutChartComponent
             overall={true}
             data={dataIndia}
-            displayTotal="87623451"
+            displayTotal="822590"
           />
         </ChartContainer>
-        <ChartContainer title="US" className={classes.donutchartContainer}>
+        <ChartContainer title="CANADA" className={classes.chartContainermiddle}>
           <DonutChartComponent
             overall={true}
-            data={dataUS}
-            displayTotal="62323451"
+            data={dataCanada}
+            displayTotal="305545"
           />
         </ChartContainer>
-        <ChartContainer title="Brazil" className={classes.donutchartContainer}>
+        <ChartContainer title="NIGERIA" className={classes.chartContainermiddle}>
           <DonutChartComponent
             overall={true}
-            data={dataBrazil}
-            displayTotal="43289044"
-          />
-        </ChartContainer>
-        <ChartContainer title="China" className={classes.chartContainermiddle}>
-          <DonutChartComponent
-            overall={true}
-            data={dataChina}
-            displayTotal="14562314"
-          />
-        </ChartContainer>
-        <ChartContainer title="Japan" className={classes.chartContainermiddle}>
-          <DonutChartComponent
-            overall={true}
-            data={dataJapan}
-            displayTotal="23678256"
+            data={dataNigeria}
+            displayTotal="286742"
           />
         </ChartContainer>
         <div className={classes.textContainer}>
@@ -256,7 +254,7 @@ const VisitBehaviorPage = ({ classes }) => {
           and find a way to calm themselves down. In this research work, country
           wise sentiment analysis of the tweets has been done. This research
           work has taken into account the tweets from twelve countries. These
-          tweets have been gathered from 20th March 2020 to 05Sep2020 and are
+          tweets have been gathered from 20th March 2020 to 31st May 2020 and are
           related to COVID19. <p>This analysis has been done to analyse how the
           citizens of different countries are dealing with the situation. The
           results of the study concludes that while majority of the people
